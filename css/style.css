@@ -1,312 +1,149 @@
-html,body,h1,h2,h3,h4,h5,h6 {
-    font-family: "Roboto", sans-serif
+/* Geral */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+    box-sizing: border-box;
 }
 
-
-container {
-    max-width: 1400px;
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #fff;
+    text-align: left; 
+    min-height: 100vh;
+    margin: 0;
+    transition: background 0.2s linear;
 }
 
-imagem {
+body.dark {
+    background-color: #292c35;
+}
+
+body.dark h1,
+body.dark .support a,
+body.dark .w3-container,
+body.dark .w3-container p,
+body.dark .w3-text-theme,
+body.dark .w3-opacity,
+body.dark .w3-padding-16,
+body.dark .w3-text-grey,
+body.dark .w3-text-teal {
+    color: #fff;
+}
+
+body.dark .w3-card-4,
+body.dark .w3-card {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark .w3-light-grey {
+    background-color: #555;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+.support {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.support a {
+    color: #292c35;
+    font-size: 32px;
+    backface-visibility: hidden;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.support a:hover {
+    transform: scale(1.1);
+}
+
+/* Footer Styles */
+.contact-section {
+    background-color: #2c3e50;
+    padding: 40px 0;
+    color: #fff;
+    text-align: center;
     width: 100%;
 }
 
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
-/* Mario!!! */
-#mario {
-    width:58px;
-    height:100px;
-    border:0px solid #000;
-    background-image:url(https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/mario-sprite.png);
-  }
-  
-  .big {
-    image-rendering:pixelated;
-    position:relative;
-    top:-50px;
-  }
-  
-  /* Animação CSS de caminhada */
-  @keyframes walk {
-    0% { background-position:0 0 }
-    100% { background-position:120px 0 }
-  }
-  
-  /* Classe para ativar a animação (enquanto a tecla é pressionada) */
-  .caminhar {
-    animation:walk .25s steps(2) infinite forwards;
-  }
-  
-  /*body {
-    background-image:url(http://slifty.com/wp-content/uploads/2011/08/9.jpg);
-    background-position:0 -727px;
-    background-repeat:no-repeat;
-  }
-  */
+.contact-icons a {
+    color: #daeaef;
+    font-size: 24px;
+    margin: 0 15px;
+    transition: color 0.2s ease-in-out;
+}
 
-  
-  /* footer */
+.contact-icons a:hover {
+    color: #ff3d2e;
+}
 
-  * ,
-  *::before,
-  *::after {
-      border: none;
-      border-radius: 0 !important;
-      box-shadow: none;
-  }
-  
-  a {
-      text-decoration: none !important;
-  }
-  
-  body {
-      box-sizing: border-box;
-      font-family: "Roboto", Helvetica, sans serif;
-      z-index: -2;
-  }
-  
-  .bg-light {
-      background: #daeaef;
-  }
-  
-  .bg-dark {
-      background: #2c3e50;
-  }
-  
-  .center {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-  }
-  
-  .flex {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      font-size: 2em;
-      justify-content: space-around;
-      height: 100%;
-  }
-  
-  .lt-blue {
-      color: #daeaef;
-  }
-  
-  .drk-blue {
-      color: #2c3e50;
-  }
-  
-  .no-gutter {
-      margin-left: 0;
-      margin-right: 0;
-  }
-  
-  .no-gutter > [class*='col-'] {
-      padding-left: 0;
-      padding-right: 0;
-  }
-  
-  .no-padding {
-      padding: 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-      .padding-sm {
-          padding: 0 20px;
-      }
-  }
-  
-  .row {
-      margin-left: -15px;
-      margin-right: -15px;
-  }
-  
-  .section {
-      padding: 250px 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-      .section {
-          padding: 150px 0;
-      }
-  }
-  
-  .text-faded {
-      color: rgb(255, 255, 255);
-      color: rgba(255, 255, 255, 0.7);
-  }
-  
-  .title {
-      color: #191b1c;
-      font-family: "Roboto Slab", serif;
-      font-size: 3.85em;
-      font-weight: bold;
-      letter-spacing: -.01em;
-      line-height: 1em;
-      word-spacing: -.05em;
-  }
-  
-  @media screen and (max-width: 768px) {
-      .title {
-          font-size: 3.45em;
-          letter-spacing: -.009em;
-          line-height: 1em;
-          word-spacing: -.04em;
-      }
-  }
-  
-  
-  /* navbar */
-  
-  .navbar-header {
-      float: none;
-      height: 80px;
-  }
-  
-  .navbar-fixed-top .navbar-collapse {
-    max-height: 450px;
-  }
-  
-  .navbar-fixed-top a {
-      display: block;
-      transition: .45s;
-  }
-  
-  @media screen and (max-width: 768px) {
-      .nav .navbar-nav .navbar-right {
-          border: none !important;	
-          padding: 0 15px !important;
-      }
-  }
-  
-  .navbar-default .navbar-nav li a {
-      background-color: transparent !important;
-      color: #1a1c1d;
-      font-family: "Roboto", Helvetica, sans serif;
-      font-size: .96em;
-      font-weight: normal;
-      margin-top: 10px;
-      padding-top: 20px;
-      text-transform: uppercase;
-  }
-  
-  @media screen and (max-width: 768px) {
-      .navbar-default li a {
-          font-family: "Roboto", Helvetica, sans serif;
-          font-size: 1.55em;
-          font-weight: 400;
-          margin: 50px auto;
-          text-transform: uppercase;
-      }
-      
-      .navbar-default li a:hover {
-          color: #9dbdc6 !important;
-      }
-  }
-  
-  .navbar-default .navbar-nav>.active>a,
-  .navbar-default .navbar-nav>.active>a:focus,
-  .navbar-default .navbar-nav>.active>a:hover {
-      color: #9dbdc6;
-  }
-  
-  .navbar-default .navbar-nav li a:hover,
-  .navbar-default .navbar-nav li a:focus {
-      color: #9dbdc6;
-  }
-  
-  .navbar-toggle {
-      margin: 25px;
-  }
-  
-  @media screen and (max-width: 768px) {
-      .navbar-toggle {
-          border: none;
-          background: transparent !important;
-      }
-      
-      .navbar-default .navbar-toggle .icon-bar {
-          background-color: #1a1c1d;
-      }
-      .navbar-default .navbar-toggle:hover .icon-bar {
-          background-color: #9dbdc6;
-          transition: .45s;
-      }
-      
-      /* nav-toggle icon animation*/
-      .navbar-toggle .icon-bar {
-          width: 22px;
-          transition: all 0.1s;
-      }
-      .navbar-toggle .top-bar {
-          transform-origin: 10% 10%;
-          transform: rotate(45deg);
-      }
-      .navbar-toggle .middle-bar {
-          opacity: 0;
-      }
-      .navbar-toggle .bottom-bar {
-          transform: rotate(-45deg);
-          transform-origin: 10% 90%;
-      }
-      .navbar-toggle.collapsed .top-bar {
-          transform: rotate(0);
-      }
-      .navbar-toggle.collapsed .middle-bar {
-          opacity: 1;
-      }
-      .navbar-toggle.collapsed .bottom-bar {
-          transform: rotate(0);
-      }
-      /* nav-toggle animation end*/
-      
-      .navbar-toggle:hover {
-          background: transparent !important;
-      }
-  }
-  
-  @media screen and (max-width: 768px) {
-      .navbar-brand {
-          margin-left: 15px !important;
-      }
-      
-      .navbar-collapse {
-          border: none;
-          box-shadow: none;
-  /* 		clear: both; */
-          text-align: center;
-          width: 100%;
-      }
-  }
-  /* navbar end */
-  
- 
-  
-  
-  /* contact */
-  
-  .contact-section {
-      height: 20%;
-  }
-  
-  .contact-icons {
-      padding: 25px 0;
-      max-width: 700px;
-  }
-  
-  .contact-info {
-      padding-bottom: 150px;
-      padding-top: 100px;
-  }
-  
-  .contact-info a {
-      color: #daeaef;
-  }
-  
-  .contact-info a:hover {
-      color: #ff3d2e;
-      transition: .45s ease;
-  }
-  /* contact end */
-  
-  
+.contact-info {
+    text-align: center;
+}
+
+.contact-info .email-sm h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #daeaef;
+}
+
+.contact-info p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+/* Posição do botão de troca de cor */
+#checkbox-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
